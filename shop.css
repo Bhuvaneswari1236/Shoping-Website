@@ -1,0 +1,170 @@
+/* Filters */
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 80px;
+    background-color: beige;
+    box-shadow: 0 5px 40px wheat;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    padding: 5px 0px;
+    display: flex;
+    align-items: end;
+    justify-content: last baseline;
+    width: 180px;
+    height: 100px;
+    align-self: last baseline;
+
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    transition: 0.4s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: hotpink;
+}
+
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    color: hotpink;
+    width: 30%;
+    height: 2px;
+    background-color: hotpink;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#mobile {
+    display: none;
+    align-items: center;
+}
+
+/* Filter Container */
+.filter-container {
+    background-color: hotpink;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px hotpink;
+}
+
+/* Filter Container */
+
+.filter {
+    background-color: beige;
+    border: 2px solid hotpink;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    margin-left: 20px;
+    align-self: flex-start;
+}
+
+.filter h4 {
+    color: hotpink;
+}
+
+.filter ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter ul li {
+    margin: 10px 0;
+}
+
+.filter ul li a {
+    text-decoration: none;
+    color: hotpink;
+}
+
+.filter ul li a.active {
+    font-weight: bold;
+}
+
+/* Price Range Slider */
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Product Container */
+.pro-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: beige;
+    padding: 20px;
+}
+
+/* Product Box */
+.pro {
+    width: 250px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.pro img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.des {
+    padding: 5px;
+
+}
+
+.des h3,
+.des span {
+    color: hotpink;
+}
+
+.des h4 {
+    color: black;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    display: block;
+    background-color: hotpink;
+    color: beige;
+    text-align: center;
+    padding: 3px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.add-to-cart:hover {
+    background-color: #ff69b4;
+}

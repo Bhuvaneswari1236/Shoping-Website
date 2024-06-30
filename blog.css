@@ -1,0 +1,232 @@
+/* Blog Section Styles */
+.blog-post .description-full {
+    display: none;
+    /* Hide the full description by default */
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 80px;
+    background-color: beige;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    padding: 5px 0px;
+    display: flex;
+    align-items: end;
+    justify-content: last baseline;
+    width: 180px;
+    height: 100px;
+    align-self: last baseline;
+
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    transition: 0.4s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: hotpink;
+}
+
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    color: hotpink;
+    width: 30%;
+    height: 2px;
+    background-color: hotpink;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#mobile {
+    display: none;
+    align-items: center;
+}
+
+.blog-post .read-more {
+    background-color: hotpink;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+
+.blog-post .read-more:hover {
+    background-color: #ff69b4;
+}
+
+
+#blog {
+    padding: 40px 80px;
+    background-color: beige;
+    /* Changed background color to beige */
+}
+
+/* Blog Banner */
+/* Blog Section Styles */
+
+/* Banner Styles */
+#bl {
+    background-image: url('images/bl4.jpeg');
+    background-size: cover;
+    /* Ensure image covers the entire banner */
+    background-position: center;
+    height: 300px;
+}
+
+/* Blog Post Styles */
+.blog-post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 20px;
+    /* Adjust padding as needed */
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+    /* Ensure images maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.blog-post h2 {
+    font-size: 24px;
+    margin: 20px 0 10px;
+    color: hotpink;
+}
+
+.blog-post p {
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.6;
+    /* Adjust line height for better readability */
+}
+
+.blog-post .read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: hotpink;
+    color: beige;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.blog-post .read-more:hover {
+    background-color: #ff69b4;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .blog-post h2 {
+        font-size: 20px;
+    }
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col {
+    display: flex;
+
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-direction: column;
+
+}
+
+footer .logo {
+    margin-bottom: 30px;
+}
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer h5 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 14px;
+}
+
+footer.follow {
+    margin-top: 20px;
+
+}
+
+footer.follow i {
+    color: #fddde4;
+    padding-right: 4px;
+    cursor: pointer;
+
+}
+
+@media(max-width:799px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: flex-start;
+        top: 0;
+        position: fixed;
+        height: 100vh;
+        right: -300px;
+        background-color: #fddde4;
+        box-shadow: 0 40px 60px rgb(214, 192, 204);
+    }
+
+    #navbar.active {
+        right: rrr0px;
+
+    }
+
+    #navbar li {
+
+        margin-bottom: 25px;
+
+    }
+}

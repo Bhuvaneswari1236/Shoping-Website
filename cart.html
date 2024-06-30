@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+
+<body>
+
+    <section id="header">
+        <a href="#"><img src="images/logo.jpg" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">shop</a></li>
+                <li><a href="blog.html">blog</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="contact.html">contact</a></li>
+                <li><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+
+            </ul>
+        </div>
+
+        <div id="mobile">
+            <a href="cart.html"><i class="fab fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+
+        <script src="cart.js"></script>
+    </section>
+
+    </div>
+    <section>
+        <div class="cart-container">
+            <h2>Shopping Cart</h2>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: $<span id="total-price">0.00</span></h3>
+                <button id="checkout-btn" href="shop.html">Shop Now </button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="banner">
+            <img src="b12.jpg" alt="">
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cartContainer = document.querySelector('.cart-container');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            function renderCart() {
+                cartContainer.innerHTML = '';
+                cart.forEach((product, index) => {
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.innerHTML = `
+                <img src="${product.img}" alt="${product.name}">
+                <div class="des">
+                  <span>${product.brand}</span>
+                  <h3>${product.name}</h3>
+                  <h4>${product.price}</h4>
+                  <button class="remove-from-cart" data-index="${index}">Remove</button>
+                </div>
+              `;
+                    cartContainer.appendChild(cartItem);
+                });
+                attachEventListeners();
+                updateTotal();
+            }
+
+            function attachEventListeners() {
+                document.querySelectorAll('.remove-from-cart').forEach(button => {
+                    button.addEventListener('click', removeFromCart);
+                });
+            }
+
+            function updateTotal() {
+                let total = 0;
+                cart.forEach(product => {
+                    total += parseFloat(product.price.substring(1));
+                });
+                document.getElementById('totalAmount').textContent = `$${total.toFixed(2)}`;
+            }
+
+            function removeFromCart(event) {
+                const index = event.target.dataset.index;
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                renderCart();
+            }
+
+            renderCart();
+        });
+    </script>
+
+
+
+</body>
+
+</html>
